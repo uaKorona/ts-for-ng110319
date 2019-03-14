@@ -1,0 +1,16 @@
+{
+  "name": "ts-for-ng110319",
+  "version": "1.0.0",
+  "description": "",
+  "main": "example.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tslint": "^5.14.0",
+    "typescript": "^3.3.3333"
+  }
+}
