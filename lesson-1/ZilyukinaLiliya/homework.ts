@@ -9,8 +9,16 @@ function summator(...args: (number | string)[]){
   const strIncluded = args.some(item => typeof item === 'string');
 
   function _sum(a: any[]): number | string {
-    const arr =  (strIncluded) ? a.map(item => item.toString()) : a.map(item => Number(item));
-    return arr.reduce((result, item) => result + item, 0);
+    let arr;
+    let initialVal;
+    if (strIncluded) {
+      arr = a.map(item => item.toString());
+      initialVal = '';
+    } else {
+      arr = a.map(item => Number(item));
+      initialVal = 0;
+    }
+    return arr.reduce((result, item) => result + item, initialVal);
   }
   return _sum(args);
 }
