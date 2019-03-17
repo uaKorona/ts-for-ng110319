@@ -7,23 +7,14 @@ function isInArray(a: any[], ...args: any[]): boolean {
 
 function summator(...args: (number | string)[]){
   const strIncluded = args.some(item => typeof item === 'string');
-  const strArr = args.map(item => item.toString());
-  const numArr: number[] = args;
 
-  function _areNumbers (a: number[] | string[]): a is number[] {
-    return a.length === 0 ||  typeof a[0] === 'number';
+  function _sum<T>(a: T[]): T {
+      return a.reduce((sum, item) => sum + item);
   }
 
-  function _sum(a: number[] | string[]): number | string {
-    if (_areNumbers(a)) {
-      return a.reduce((sum, item) => sum + item);
-    } else {
-      return a.reduce((sum, item) => sum + item);
-    }
-  }
-
-  return (strIncluded) ? _sum(strArr) : _sum(numArr);
+  return (strIncluded) ?  _sum<string>(args.map(item => item.toString())) : _sum<number>(args);
 }
+
 
 function getUnique(...args: any[]) {
   let arr: any[] = [];
