@@ -1,0 +1,11 @@
+{
+  "extends": "../../tslint.json",
+  "jsRules": {
+    "curly": [true, "ignore-same-line"],
+    "no-console": false
+  },
+  "rules": {
+    "curly": [true, "ignore-same-line"],
+    "no-console": false
+  }
+}
