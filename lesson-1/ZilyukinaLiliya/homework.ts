@@ -8,13 +8,12 @@ function isInArray(a: any[], ...args: any[]): boolean {
 function summator(...args: (number | string)[]){
   const strIncluded = args.some(item => typeof item === 'string');
 
-  function _sum<T>(a: T[]): T {
-      return a.reduce((sum, item) => sum + item);
+  function _sum(a: any[]): number | string {
+    const arr =  (strIncluded) ? a.map(item => item.toString()) : a.map(item => Number(item));
+    return arr.reduce((result, item) => result + item, 0);
   }
-
-  return (strIncluded) ?  _sum<string>(args.map(item => item.toString())) : _sum<number>(args);
+  return _sum(args);
 }
-
 
 function getUnique(...args: any[]) {
   let arr: any[] = [];
