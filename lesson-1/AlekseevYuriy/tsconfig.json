@@ -1,0 +1,7 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["./**/*.ts"],
+
+  
+  "lib": ["es7", "dom"]
+}
