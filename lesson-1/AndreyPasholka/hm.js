@@ -17,3 +17,30 @@ function isInArray(array) {
     return true;
 }
 isInArray([5, 9, 'fd', '*', 5, 'fd', '*']);
+/**
+ * Написать функцию summator(), которая суммирует переданые ей аргументы.
+ * Аргументы могут быть либо строкового либо числового типа. Количество их не ограничено
+ * @param args
+ * @returns {number}
+ */
+function summator() {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i] = arguments[_i];
+    }
+    var sum = 0;
+    for (var i = 0; i < args.length; i++) {
+        if (typeof args[i] === 'string') {
+            sum += Number(args[i]);
+        }
+    }
+    return sum;
+}
+summator(5, 9, '5');
+function toMatrix(data, rowSize) {
+    var length = data.length;
+    var a1 = data.slice(0, rowSize - 1);
+    var a2 = data.slice(rowSize, length - 1);
+    return [a1, a2];
+}
+toMatrix([1, 5, {}, 8, 'dsa', 98, [], 848, null, undefined], 5);
