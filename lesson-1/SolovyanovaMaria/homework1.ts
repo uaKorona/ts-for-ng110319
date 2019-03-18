@@ -8,10 +8,22 @@ const isInArray = <T extends (string | number | boolean | null | undefined | sym
     return rest.every(currentElement => targetArray.includes(currentElement));
 };
 
+// isInArray<string>([1, 2], 2, 3);
+
+// function a<T extends { name: string, age: number }>(_user: T): void {
+
+// }
+// type User = { name: string,age: number, famale: boolean };
+
+// a<User>({}){
+
+// }
+
+
 // 2
 const summator = (...elements: (string | number)[]) => {
     return elements.reduce((acc: number, currentElement: (string | number)) => {
-        if (typeof(currentElement) === 'string') {
+        if (typeof (currentElement) === 'string') {
             currentElement = Number(currentElement);
         }
         return acc += currentElement;
@@ -24,7 +36,7 @@ const summator = (...elements: (string | number)[]) => {
 
 const getUnique = (...array: unknown[]) => {
     return array.reduce((acc: unknown[],
-                         currentElement: unknown) =>
+        currentElement: unknown) =>
         (acc.includes(currentElement) ? acc : [...acc, currentElement]), []);
 };
 

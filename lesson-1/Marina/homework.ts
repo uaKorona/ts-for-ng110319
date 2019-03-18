@@ -2,14 +2,15 @@
 // Написать функцию isInArray(), которая начиная со второго принимает переменное количество аргументов.
 //     Возвращает true, если все аргументы, кроме первого входят в первый.
 //     Первым всегда должен быть массив.
-
-function hasArrAllComponents (arrMain: any[], ...arrsCheckedElements: any[]): boolean {
-    return arrsCheckedElements.every(function(item) {
+type sb = string | boolean;
+function hasArrAllComponents<T>(arrMain: T[], ...arrsCheckedElements: T[]): boolean {
+    return arrsCheckedElements.every((item) => {
         return arrMain.indexOf(item) !== -1;
     });
 }
-
-let a: boolean = hasArrAllComponents([1, 2], 1, 3);
+// let b = { a: 1 };
+// let a: boolean = hasArrAllComponents<string>(['1', true], '1', false);
+// console.log(a);
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -17,14 +18,14 @@ let a: boolean = hasArrAllComponents([1, 2], 1, 3);
 // Написать функцию summator(), которая суммирует переданые ей аргументы.
 //     Аргументы могут быть либо строкового либо числового типа. Количество их не ограничено
 
-function summator (...summedItems: (number|string)[]): number|string {
+function summator(...summedItems: (number | string)[]): number | string {
 
-    return summedItems.reduce(function(sum: any, item: any) {
-        return sum + item;
+    return summedItems.reduce(function (sum: any, item: any) {
+        return sum + item;  // Number.isNaN
     }, 0);
 }
 
-let b: number|string = summator(1, 2, 'asd');
+let b: number | string = summator(1, 2, 'asd');
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -34,7 +35,7 @@ let b: number|string = summator(1, 2, 'asd');
 //     Порядок элементов результирующего массива должен совпадать с порядком,
 //     в котором они встречаются в оригинальной структуре.
 function getUnique(...checkedArguments: any[]): any[] {
-    return checkedArguments.filter(function(item, index) {
+    return checkedArguments.filter(function (item, index) {
         return checkedArguments.indexOf(item) === index;
     });
 }
@@ -62,5 +63,5 @@ function toMatrix(data: any[], rowSize: number): any[] {
     return newMatrix;
 }
 
-let d1: any [] = toMatrix([1, 123, 'asd', 1, 456], 2);
-let d2: any [] = toMatrix([1, 123, 'asd', 1], 2);
+let d1: any[] = toMatrix([1, 123, 'asd', 1, 456], 2);
+let d2: any[] = toMatrix([1, 123, 'asd', 1], 2);

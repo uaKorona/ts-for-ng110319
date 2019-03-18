@@ -1,4 +1,4 @@
-function isInArray(array: Array<any>, ...needles: any[]) {
+function isInArray(array: Array<any>, ...needles: any[]): boolean {
     if (!Array.isArray(array)) {
         throw new Error('First argument should be array');
     }
@@ -22,17 +22,19 @@ isInArray([5, 9, 'fd', '*', 5, 'fd', '*']);
  * @param args
  * @returns {number}
  */
-function summator(...args: (number|string)[]): number {
+function summator(...args: (number | string)[]): number {
     let sum = 0;
     for (let i = 0; i < args.length; i++) {
-        if (typeof args[i] === 'string') {
+        if (typeof el === 'string') {
             sum += Number(args[i]);
+        } else {
+
         }
     }
     return sum;
 }
 
-summator(5,9,'5');
+summator(5, 9, '5');
 
 
 /**

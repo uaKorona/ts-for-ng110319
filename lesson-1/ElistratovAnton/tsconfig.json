@@ -1,8 +1,7 @@
 {
   "extends": "../../tsconfig.json",
-  "target": "ES6",
-  "rules": {
-    "no-console": false
+  "compilerOptions": {
+    "target": "ES6",
   },
   "include": ["./**/*.ts"]
 }

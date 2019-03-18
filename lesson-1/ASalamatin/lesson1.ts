@@ -24,7 +24,7 @@ console.log(isInArray([1, 2, 3], 1, 2, 3));
     Аргументы могут быть либо строкового либо числового типа. Количество их не ограничено*/
 
 function summator(...args: (string | number)[]): number {
-    return +args.reduce((sum, current) => +sum + +current);
+    return +args.reduce((sum, current) => Number(sum) + Number(current));
 }
 
 console.log(summator(1, '2', 3, 4, '5'));
@@ -54,3 +54,4 @@ function getUnique(...args: any[]): any[] {
     Оригинальный массив не должен быть изменен.*/
 
 // Не понял задание. Огромная просьба писать в домашних заданиях пример того, что должна возвращать функция. Или помогать с решением в чате.
+// https://lodash.com/docs/4.17.11#chunk

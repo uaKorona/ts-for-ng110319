@@ -68,3 +68,13 @@ console.log(toMatrix([[1, 2, 3], [1], [1, 2, 3, 4, 5, 6, 7]], 2)) // [[1,2],[1],
 
 // fix TS2393 https://github.com/holochain/hc-ts-template/issues/2#issuecomment-417435004
 export = 0;
+// type User = {
+//   firstName: string,
+//   age: number;
+// }
+// let accounts: { [id: string]: User } = {
+//   '091823123asdasd123': {
+//     firstName: 'Igor',
+//     age: 33
+//   }
+// }

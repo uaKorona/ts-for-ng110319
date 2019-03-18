@@ -1,8 +1,10 @@
 /*в задании не уточняются типы элементов, поэтому допустила в учебных примерах использование any*/
 
 function isInArray(a: any[], ...args: any[]): boolean {
-  if (!args.length) return false;
-  return args.every(item => a.indexOf(item) !== -1);
+  if (!args.length) {
+    return false;
+  }
+  return args.every((item: any) => a.indexOf(item) !== -1);
 }
 
 function summator(...args: (number | string)[]){

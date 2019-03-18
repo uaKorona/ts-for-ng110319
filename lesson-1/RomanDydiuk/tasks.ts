@@ -7,10 +7,10 @@
 function isInArray(argument1: number[], ...argument2: number[]): boolean {
   if (argument1 && argument1.length && argument2 && argument2.length) {
     return !argument2.some((arg) => {
-      return argument1.indexOf(arg) == -1
-    })
+      return argument1.indexOf(arg) === -1;
+    });
   }
-  return false
+  return false;
 }
 
 console.log("isInArray([1, 2, 3], 1, 2, 3)", isInArray([1, 2, 3], 1, 2, 3)) // true

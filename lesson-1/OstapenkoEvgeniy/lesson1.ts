@@ -43,3 +43,4 @@ function toMatrix<T>(data: T[], rowSize: number = 1): T[][] {
 
 console.log(toMatrix<number>([1, 2, 3, 4, 5, 6, 7], 2));
 
+let p1: IAccount;
