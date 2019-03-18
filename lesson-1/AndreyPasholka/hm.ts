@@ -71,15 +71,15 @@ summator(5,9,'5');
  * [['a', 'b', 'c'], ['d']];
  *
  */
-interface Interface1 {
-    [key:number]: any[];
-}
-
-function toMatrix(data:any[], rowSize:number):Interface1 {
-    const length:number = data.length;
-    let a1:any[] = data.slice(0, rowSize - 1);
-    let a2:any[] = data.slice( rowSize, length - 1);
-    return [a1, a2];
-}
-
-toMatrix([1, 5 , {}, 8, 'dsa', 98, [], 848, null, undefined], 5);
+// interface Interface1 {
+//     [key:number]: any[];
+// }
+//
+// function toMatrix(data:any[], rowSize:number):Interface1 {
+//     const length:number = data.length;
+//     let a1:any[] = data.slice(0, rowSize - 1);
+//     let a2:any[] = data.slice( rowSize, length - 1);
+//     return [a1, a2];
+// }
+//
+// toMatrix([1, 5 , {}, 8, 'dsa', 98, [], 848, null, undefined], 5);
