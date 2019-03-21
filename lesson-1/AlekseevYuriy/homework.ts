@@ -9,8 +9,10 @@ function isInArray(array: snb[], ...args: snb[]): boolean {
   return args.every((v: snb) => array.indexOf(v) > -1);
 }
 
+
 let result1 = isInArray([2, 3, 14, 5], 2, '14', 1);
-console.log(result1);
+
+console.log('task1 result: ' + result1);
 /*
 2)
  Написать функцию summator(), которая суммирует переданые ей аргументы.
@@ -24,7 +26,7 @@ function summator(...args: sn[]): number {
 }
 
 let result2 = summator(2, '50', 300);
-console.log(result2);
+console.log('task2 result: ' + result2);
 /*
 3)
   Написать функцию getUnique(arr), которая принимает аргументом неограниченое число аргументов,
@@ -35,7 +37,7 @@ console.log(result2);
 
 function getUnique(...args: snb[]): snb[] {
   const resultArray: snb[] = [];
-  args.forEach((item) => {
+  args.forEach((item: snb) => {
     if (!isInArray(resultArray, item)) {
       resultArray.push(item);
     }
@@ -44,7 +46,7 @@ function getUnique(...args: snb[]): snb[] {
 }
 
 let result3 = getUnique(5, 5, 12, 3, 1, 6, 6, 7, 2, 2);
-console.log(result3);
+console.log('task3 result: ' + result3);
 
 /*
 4)
@@ -55,14 +57,15 @@ console.log(result3);
 */
 
 function toMatrix(data: number[], rowSize: number): number[][] {
-  var resultArray: number[][] = [[]];
-  var currRowSize = 0;
-  var currRow = 0;
+  const resultArray: number[][] = [[]];
+  let currRowSize: number = 0;
+  let currRow: number = 0;
 
-  data.forEach(function (item) {
+  data.forEach(function (item: number) {
 
-    if (!resultArray[currRow])
+    if (!resultArray[currRow]) {
       resultArray[currRow] = new Array(rowSize);
+    }
 
     resultArray[currRow].push(item);
     currRowSize++;
