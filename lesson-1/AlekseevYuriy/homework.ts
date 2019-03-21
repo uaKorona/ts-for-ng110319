@@ -67,7 +67,7 @@ function toMatrix(data: number[], rowSize: number): number[][] {
       resultArray[currRow] = new Array(rowSize);
     }
 
-    resultArray[currRow].push(item);
+    resultArray[currRow][currRowSize] = item;
     currRowSize++;
 
     if (currRowSize > rowSize - 1) {
@@ -80,3 +80,4 @@ function toMatrix(data: number[], rowSize: number): number[][] {
 
 let result4 = toMatrix([2, 3, 5, 6, 7, 7, 8, 8, 9, 9, 9, 9, 12, 11, -1, 13, 5], 4);
 console.log(result4);
+console.log('3-2 element is 11:' + result4[3][1]);
