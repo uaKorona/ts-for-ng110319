@@ -118,48 +118,48 @@
 
 // TODO double assertion as number as string
 
-interface IX {
-    readonly x: number;
-}
+// interface IX {
+//     readonly x: number;
+// }
 
-const xObj: IX = {
-    x: 10,
-};
+// const xObj: IX = {
+//     x: 10,
+// };
 
-xObj.x = 2;
+// xObj.x = 2;
 
-interface IY {
-    y: number;
-    sum(): number;
-}
+// interface IY {
+//     y: number;
+//     sum(): number;
+// }
 
-abstract class SuperPoint {
-    public y: number = 10;
-    public abstract sum(): number;
+// abstract class SuperPoint {
+//     public y: number = 10;
+//     public abstract sum(): number;
 
-    private chartName(): string {
-        return 'My Chart';
-    }
-}
+//     private chartName(): string {
+//         return 'My Chart';
+//     }
+// }
 
 
-class Point extends SuperPoint {
+// class Point extends SuperPoint {
 
-    public sum(): number {
-        return this.y * 10;
-    }
+//     public sum(): number {
+//         return this.y * 10;
+//     }
 
-}
+// }
 
-class CustomPoint extends SuperPoint {
+// class CustomPoint extends SuperPoint {
 
-    public sum(): number {
-        return this.y * 2;
-    }
+//     public sum(): number {
+//         return this.y * 2;
+//     }
 
-}
+// }
 
-let point = new Point(1, 2, 3);
+// let point = new Point(1, 2, 3);
 
 // class CustomPoint extends Point {
 //     public constructor() {
@@ -186,14 +186,17 @@ let point = new Point(1, 2, 3);
 
 // type, class;
 
-function a<T>(_a: T): void {
+// function a<T>(_a: T): void {
 
-}
+// }
 
-interface IAccount<ID, Info> {
-    id: ID;
-    info: Info[];
-}
+// interface IAccount<ID, Info> {
+//     id: ID;
+//     info: Info[];
+// }
 
-let user: IAccount<number, { age: number }>;
-let user1: IAccount<string, { email: string }>;
+// let user: IAccount<number, { age: number }>;
+// let user1: IAccount<string, { email: string }>;
+
+let user: IAccount;
+$('.selector');
