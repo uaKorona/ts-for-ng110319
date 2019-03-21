@@ -7,6 +7,7 @@
 function isInArray<T>(array: Array<T>, ...args: T[]):boolean {
  
     return args.every(v=>array.indexOf(v) > -1);
+    //return args.every(v=>array.includes(v));
     
     }
 
