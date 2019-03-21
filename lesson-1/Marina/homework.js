@@ -3,7 +3,7 @@
 // Написать функцию isInArray(), которая начиная со второго принимает переменное количество аргументов.
 //     Возвращает true, если все аргументы, кроме первого входят в первый.
 //     Первым всегда должен быть массив.
-function hasArrAllComponents(arrMain) {
+function hasArrayAllComponents(arrMain) {
     var arrsCheckedElements = [];
     for (var _i = 1; _i < arguments.length; _i++) {
         arrsCheckedElements[_i - 1] = arguments[_i];
@@ -12,7 +12,7 @@ function hasArrAllComponents(arrMain) {
         return arrMain.indexOf(item) !== -1;
     });
 }
-var a = hasArrAllComponents([1, 2], 1, 3);
+var a = hasArrayAllComponents(['1', true], '1', false);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 2)
 // Написать функцию summator(), которая суммирует переданые ей аргументы.
@@ -23,10 +23,10 @@ function summator() {
         summedItems[_i] = arguments[_i];
     }
     return summedItems.reduce(function (sum, item) {
-        return sum + item;
+        return sum + ((typeof item === 'string') ? Number(item) : item);
     }, 0);
 }
-var b = summator(1, 2, 'asd');
+var b = summator(1, 2, '5');
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 3)
 // Написать функцию getUnique(arr), которая принимает аргументом неограниченое число аргументов,
@@ -38,11 +38,12 @@ function getUnique() {
     for (var _i = 0; _i < arguments.length; _i++) {
         checkedArguments[_i] = arguments[_i];
     }
-    return checkedArguments.filter(function (item, index) {
-        return checkedArguments.indexOf(item) === index;
-    });
+    return Array.from(new Set(checkedArguments));
+    // return checkedArguments.filter((item, index): boolean => {
+    //     //     return checkedArguments.indexOf(item) === index;
+    //     // });
 }
-var c = getUnique(a, 123, 'asd', a, 456);
+var c = getUnique('asd', 456, a, 'qwe', a);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 4)
 // Дописать функцию toMatrix(data, rowSize), которая принимает аргументом массив и число,
@@ -61,6 +62,5 @@ function toMatrix(data, rowSize) {
     }
     return newMatrix;
 }
-var cd;
-var d1 = toMatrix([1, 123, 'asd', 1, 456], 2);
-var d2 = toMatrix([1, 123, 'asd', 1], 2);
+var d1 = toMatrix([1, false, 'asd', 1, 456], 2);
+var d2 = toMatrix([1, false, 'asd', 1], 2);
